@@ -1,0 +1,13 @@
+<div>
+    <p>job field: {{jobData.jobField}}</p>
+    <p>job name: {{jobData.jobName}}</p>
+    <div *ngIf="showDetails">
+        <p>scope hours: {{jobData.scopeHours}}</p>
+        <p>area: {{jobData.area}}</p>
+        <p>requirement: {{jobData.requirement}}</p>
+        <p>home: {{jobData.home}}</p>
+    </div>
+    <button (click)="moreDetails()">for details</button>
+    <button (click)="sendResume()">send resume</button>
+    <input *ngIf="upload" type="file">
+</div>

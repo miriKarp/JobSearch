@@ -1,0 +1,18 @@
+<div>
+    <label for="filterByJobField">filter by job field</label>
+    <select name="filterByJobField" id="filter" [(ngModel)]="selectedJobField" (change)="filterByCondition()">
+        <option value="all">all</option>
+        <option value="programmer">programmer</option>
+        <option value="teacher">teacher</option>
+        <option value="kindergartenteacher">kindergartenteacher</option>
+        <option value="taxconsultant">taxconsultant</option>
+        <option value="accountant">accountant</option>
+        <option value="graphicartist">graphicartist</option>
+    </select>
+    <input type="text" placeholder="enter area of job" [(ngModel)]="selectedJobArea">
+</div>
+<div *ngFor="let job of jobList;let i=index">
+    <job [jobData]="job" *ngIf="(job.area?.includes(selectedJobArea)||job.area?.includes(selectedJobArea|lowercase)||job.area?.includes(selectedJobArea|uppercase)
+        ||selectedJobArea==null||selectedJobArea=='')">
+    </job>
+</div>

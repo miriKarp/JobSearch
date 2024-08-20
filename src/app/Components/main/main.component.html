@@ -1,0 +1,13 @@
+<a [routerLink]="['']"><img src="../assets/jobs.png"></a>
+
+<header>
+    <p class="head">user name: {{user?.userName}} </p>
+    <p class="head">user Job fields: <button (click)="filterByJobField()">{{user?.userJobField}}</button></p>
+    <p class="head">count of resume: {{user?.userResumes}}</p>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
+    <a href="">to connect: ourjobs4you@gmail.com</a>
+</footer>
